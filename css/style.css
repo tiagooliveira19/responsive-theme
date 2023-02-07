@@ -1,0 +1,83 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.header {
+    color: #FFFFFF;
+    background-color: #1818A9;
+    padding: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.title {
+    font-size: 40px;
+    letter-spacing: -2.5px;
+    text-align: center;
+}
+
+.menu {
+    display: flex;
+    cursor: pointer;
+    font-size: 15px;
+    gap: 1em;
+}
+
+li {
+    list-style: none;
+}
+
+.menu li:hover {
+    opacity: 0.4;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.menu li {
+    padding: 5px 14px;
+}
+
+/* Checkbox */
+input[type=checkbox] {
+    display: none;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    font-size: 24px;
+    user-select: none;
+}
+
+@media (max-width: 768px) {
+
+    .menu {
+        display: none;
+        position: relative;
+        right: 0;
+        left: 0;
+        text-align: center;
+        padding: 16px 0;
+        margin-top: 45px;
+    }
+
+    .menu li:hover {
+        opacity: 0.4;
+        display: inline-block;
+        transition: 0.3s ease;
+    }
+
+    .menu li + li {
+        margin-top: 12px;
+    }
+
+    input[type=checkbox]:checked ~ .menu {
+        display: block;
+    }
+
+    .hamburger {
+        display: block;
+        float: right;
+    }
+}
