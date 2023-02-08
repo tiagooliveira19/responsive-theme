@@ -2,12 +2,33 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+h1 {
+    color: #1818A9;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:visited {
+    color: inherit;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+li {
+    list-style: none;
+}
+
 .header {
     color: #FFFFFF;
     background-color: #1818A9;
     padding: 5px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 }
 
@@ -24,12 +45,8 @@ body {
     gap: 1em;
 }
 
-li {
-    list-style: none;
-}
-
 .menu li:hover {
-    opacity: 0.4;
+    opacity: 0.7;
     border-radius: 5px;
     transition: 0.3s ease;
 }
@@ -50,7 +67,83 @@ input[type=checkbox] {
     user-select: none;
 }
 
-@media (max-width: 768px) {
+.flex {
+    display: flex;
+}
+
+.mt-5 {
+    margin-top: 5px;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mb-25 {
+    margin-bottom: 25px;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
+
+.mt-35 {
+    margin-top: 35px;
+}
+
+.ml-20 {
+    margin-left: 20px;
+}
+
+.item-blocks, .img-bg {
+    height: 240px;
+    width: 305px;
+    background-color: #EEEEEE;
+}
+
+.img-news {
+    height: 240px;
+    width: 305px;
+}
+
+.category {
+    font-weight: bold;
+    color: #1818A9;
+}
+
+.news-title {
+    width: 315px;
+    font-weight: 600;
+    font-size: 23px;
+}
+
+.time {
+    font-size: 12px;
+    color: #808080;
+}
+
+.btn-load-more {
+    height: 35px;
+    width: 150px;
+    color: #FFFFFF;
+    background-color: #1818A9;
+    border-color: #1818A9;
+    font-weight: 600;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    cursor: pointer;
+}
+
+.btn-load-more:hover {
+    opacity: 0.7;
+}
+
+@media (max-width: 992px), (max-width: 768px) {
 
     .menu {
         display: none;
@@ -63,7 +156,7 @@ input[type=checkbox] {
     }
 
     .menu li:hover {
-        opacity: 0.4;
+        opacity: 0.7;
         display: inline-block;
         transition: 0.3s ease;
     }
@@ -78,6 +171,36 @@ input[type=checkbox] {
 
     .hamburger {
         display: block;
-        float: right;
+        text-align: center;
+    }
+
+    .content {
+        display: block !important;
+        margin-bottom: 25px;
+    }
+
+    .blocks {
+        margin-top: 25px;
+    }
+}
+
+@media (max-width: 665px) {
+
+    .content {
+        display: block !important;
+        margin-bottom: 25px;
+    }
+
+    .blocks {
+        margin-top: 25px;
+    }
+
+    .item-news {
+        display: block !important;
+    }
+
+    .info-news {
+        margin-left: 0;
+        margin-top: 10px;
     }
 }
