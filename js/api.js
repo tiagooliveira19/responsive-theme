@@ -3,8 +3,6 @@ function loadNews (pageNumber, qtd) {
     const limit = qtd ? +qtd : 10;
     const page = pageNumber ? +pageNumber : 1;
 
-    // console.log(pageNumber)
-
     $.get('https://veja.abril.com.br/wp-json/wp/v2/posts?page=' + page + '&per_page=' + limit, function (response) {
 
         $.each(response, function (index, json) {
@@ -15,7 +13,13 @@ function loadNews (pageNumber, qtd) {
             let link = json['link'];
 
             let date = new Date(json['date']);
-            let time = date.toLocaleDateString() + ', ' + date.toLocaleTimeString();
+            let hour = date.getHours() + 'h' + date.getMinutes();
+            const option = {
+                year: 'numeric',
+                month: ('long' || 'short' || 'numeric'),
+                day: 'numeric'
+            }
+            let time = date.toLocaleDateString('pt-BR', option) + ', ' + hour;
 
             $('.news')
                 .append(

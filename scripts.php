@@ -6,8 +6,10 @@
 
     $(document).ready(function () {
 
+        // Load first 10 news
         loadNews();
 
+        // Add more news to page
         $('.btn-load-more').click(function () {
 
             let pageNumber = parseInt($('#page-number').val());
@@ -16,7 +18,22 @@
             let addPage = pageNumber + 1;
             let addItems = 10;
 
-            loadNews(addPage, addItems);
+            $('.btn-load-more').html('Carregando...');
+
+            setTimeout(function () {
+                loadNews(addPage, addItems);
+                $('.btn-load-more').html('Carregar mais');
+            }, 1000)
+        });
+
+        // Change menu icon
+        $('input:checkbox[name=checkbox_toggle]').on('change', function () {
+
+            if ($(this).is(':checked')) {
+                $('#label-icon').html('<i class="fa-solid fa-xmark"></i>');
+            } else {
+                $('#label-icon').html('<i class="fa-solid fa-bars"></i>');
+            }
         });
     });
 </script>
